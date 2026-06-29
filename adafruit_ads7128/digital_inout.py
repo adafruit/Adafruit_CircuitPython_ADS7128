@@ -4,7 +4,7 @@
 
 """
 :py:class:`~adafruit_ads7128.digital_inout.DigitalInOut`
-====================================================
+==============================================================
 
 Digital input/output of the ADS7128.
 
