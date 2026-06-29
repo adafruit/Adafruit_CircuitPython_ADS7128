@@ -137,7 +137,7 @@ def _crc8(value: int) -> int:
     return crc
 
 
-class ADS7128:
+class ADS7128:  # noqa: PLR0904
     """Driver for the ADS7128 8-channel 12-bit ADC with GPIOs.
 
     :param ~busio.I2C i2c: The I2C bus the ADS7128 is connected to.
@@ -170,9 +170,7 @@ class ADS7128:
 
     def _write_register(self, reg: int, data: int) -> None:
         if self._crc_enabled:
-            out = bytes(
-                (_OP_WRITE, _crc8(_OP_WRITE), reg, _crc8(reg), data, _crc8(data))
-            )
+            out = bytes((_OP_WRITE, _crc8(_OP_WRITE), reg, _crc8(reg), data, _crc8(data)))
             with self.i2c_device as i2c:
                 i2c.write(out)
             return
@@ -184,9 +182,7 @@ class ADS7128:
 
     def _set_bits(self, reg: int, mask: int) -> None:
         if self._crc_enabled:
-            out = bytes(
-                (_OP_SET_BIT, _crc8(_OP_SET_BIT), reg, _crc8(reg), mask, _crc8(mask))
-            )
+            out = bytes((_OP_SET_BIT, _crc8(_OP_SET_BIT), reg, _crc8(reg), mask, _crc8(mask)))
             with self.i2c_device as i2c:
                 i2c.write(out)
             return

@@ -40,6 +40,5 @@ while True:
     if not button.value:
         led.value = True  # LED on while the button is pressed
     else:
-
         led.value = False
     time.sleep(0.01)

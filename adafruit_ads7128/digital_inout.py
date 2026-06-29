@@ -14,12 +14,13 @@ Digital input/output of the ADS7128.
 
 import digitalio
 from micropython import const
+
 from adafruit_ads7128.ads7128 import ADS7128
 
 try:
     from typing import Optional
 
-    from digitalio import DriveMode, Direction, Pull
+    from digitalio import Direction, DriveMode, Pull
 except ImportError:
     pass
 
@@ -30,14 +31,18 @@ __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_ADS7128.git"
 _ZCD_CFG_CH0_3 = const(0xE3)
 _ZCD_CFG_CH4_7 = const(0xE4)
 
+
 def _get_bit(val: int, bit: int) -> bool:
     return val & (1 << bit) > 0
+
 
 def _enable_bit(val: int, bit: int) -> int:
     return val | (1 << bit)
 
+
 def _clear_bit(val: int, bit: int) -> int:
     return val & ~(1 << bit) & 0xFF
+
 
 class DigitalInOut:
     """Digital input/output of the ADS7128. The interface is the same as the
@@ -178,10 +183,6 @@ class DigitalInOut:
     @zcd_output_enabled.setter
     def zcd_output_enabled(self, value: bool) -> None:
         if value:
-            self._adc.gpo_zcd_update_en = _enable_bit(
-                self._adc.gpo_zcd_update_en, self._pin
-            )
+            self._adc.gpo_zcd_update_en = _enable_bit(self._adc.gpo_zcd_update_en, self._pin)
         else:
-            self._adc.gpo_zcd_update_en = _clear_bit(
-                self._adc.gpo_zcd_update_en, self._pin
-            )
+            self._adc.gpo_zcd_update_en = _clear_bit(self._adc.gpo_zcd_update_en, self._pin)

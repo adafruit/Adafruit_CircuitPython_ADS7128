@@ -12,6 +12,7 @@ AnalogIn for ADC readings.
 """
 
 from micropython import const
+
 from adafruit_ads7128.ads7128 import ADS7128
 
 __version__ = "0.0.0+auto.0"
@@ -22,6 +23,7 @@ _HYSTERESIS_CH0 = const(0x20)  # per-channel block base, +4 per channel
 _MAX_LSB_CH0 = const(0x60)  # +2 per channel
 _MIN_LSB_CH0 = const(0x80)
 _RECENT_LSB_CH0 = const(0xA0)  # +2 per channel
+
 
 class AnalogIn:
     """AnalogIn-compatible wrapper for ADS7128 single-ended readings.
