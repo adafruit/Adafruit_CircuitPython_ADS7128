@@ -7,5 +7,11 @@
 API Reference
 #############
 
-.. automodule:: adafruit_ads7128
+.. automodule:: adafruit_ads7128.ads7128
+    :members:
+
+.. automodule:: adafruit_ads7128.analog_in
+    :members:
+
+.. automodule:: adafruit_ads7128.digital_inout
     :members:
