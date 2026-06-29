@@ -24,14 +24,12 @@ Table of Contents
 .. toctree::
     :caption: Tutorials
 
-.. todo:: Add any Learn guide links here. If there are none, then simply delete this todo and leave
-    the toctree above for use later.
+    Adafruit ADS7128 8-Channel ADC and GPIO Expander Learn Guide <https://learn.adafruit.com/adafruit-ads7128-8-channel-adc-and-gpio-expander>
 
 .. toctree::
     :caption: Related Products
 
-.. todo:: Add any product links here. If there are none, then simply delete this todo and leave
-    the toctree above for use later.
+    Adafruit ADS7128 8-Channel ADC and GPIO Expander <https://www.adafruit.com/product/6494>
 
 .. toctree::
     :caption: Other Links
